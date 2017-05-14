@@ -1,17 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="dark">
+    <ion-title text-center>Ionic and Firebase</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addUser()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding class="background-template">
+<div class="template-center">
+  <h4 class="center">Welcome to Ionic 2/3 and  Firebase starter kit</h4>
+  <p class="center">In this starter-kit we are using as frontend framework, the ionic 2/3 with angularJs 4. As a database we use the famous firebase of Google. We are trying to demonstrate the usefulness of this platform.</p>
+  
+  <ion-list>
+    <button ion-item class="center" *ngFor="let user of users | async" (click)="showOptions(user.$key, user.Name)">
+      {{user.title}}
+    </button>
+  </ion-list>
+
+  <p class="center" style="color: blue;">You can add users from the add button on the top right corner. The list of the users is saved at firebase. If you refresh, even in development mode, the list will load the users after getting them from firebase. You can edit a user by clicking on him.</p>
+</div>
 </ion-content>
