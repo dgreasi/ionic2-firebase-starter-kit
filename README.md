@@ -1,5 +1,5 @@
 # ionic2-firebase-starter-kit
-A starter kit using Ionic 2 for web applications and angularJs 4 with angularFire2(firebase)
+A starter kit using Ionic 2/3 for web applications and angularJs 4 with angularFire2(firebase)
 
 
 ## Set up the framework
@@ -42,3 +42,6 @@ This web application demonstrates the use of firebase with ionic 2/3. Live chang
   }
 }
 ```
+
+## Demo Instructions for live changes
+You can check this starter kit at the given link on the description. If you want to test the live changes, enter to the website from your phone and your pc. Change/Add/Delete a user and you will see the change instantly on the other device.
