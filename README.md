@@ -1,5 +1,5 @@
 # ionic2-firebase-starter-kit
-A starter kit using Ionic 2/3 for web applications and angularJs 4 with angularFire2(firebase)
+A starter kit using Ionic 2/3 for web applications and Angular 4 with angularFire2(firebase)
 
 
 ## Set up the framework
