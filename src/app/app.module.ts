@@ -12,7 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { environment } from '../environments/environment';
+// import { environment } from '../environments/environment';
 
 // AF2 Settings
 // Go to Firebase console and add your own config settings
