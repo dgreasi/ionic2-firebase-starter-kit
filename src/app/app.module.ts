@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { HttpModule } from '@angular/http';
 import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -12,7 +12,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { NpmDownloads } from 'get-package-downloads';
+// import { DownloadsModule } from 'get-package-downloads';
+import { NpmService } from 'get-package-downloads';
 // import { environment } from '../environments/environment';
 
 // AF2 Settings
@@ -35,9 +36,10 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
+    HttpModule,
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    NpmDownloads
+    // DownloadsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,6 +49,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    NpmService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
