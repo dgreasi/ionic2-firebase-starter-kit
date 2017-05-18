@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 
+import { NpmDownloads } from 'get-package-downloads';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -9,8 +11,10 @@ import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database
 export class HomePage {
 	users: FirebaseListObservable<any[]>;
 
-  	constructor(public navCtrl: NavController, public alertCtrl: AlertController, db: AngularFireDatabase, public actionSheetCtrl: ActionSheetController) {
+  	constructor(public navCtrl: NavController, public npmService: NpmDownloads, public alertCtrl: AlertController, db: AngularFireDatabase, public actionSheetCtrl: ActionSheetController) {
 		this.users = db.list('/users');
+
+		console.log("Downloads: " + this.npmService.getDowloadsPackage('get-package-downloads'));
   	}
 
 
