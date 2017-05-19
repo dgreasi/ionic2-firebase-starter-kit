@@ -25,7 +25,7 @@ sudo apt-get purge nodejs npm
 Download node.js [here](https://nodejs.org/en/) and install it on your system.
 
 ### Step 2
-Ionic Installation (may need $sudo)
+Ionic Installation (may need sudo)
 ```bash
 $ npm install -g ionic cordova
 ```
