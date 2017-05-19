@@ -5,7 +5,7 @@ A starter kit using Ionic 2/3 for web applications and Angular 4 with angularFir
 ## Set up the framework
 Make sure you have Node.js v6 or greater installed, if not follow te below instructions:
 ### Step 1
-#### First way
+#### First way (recommended)
 ```bash
 # Run one of the following
 # for Node.js v6
