@@ -3,7 +3,23 @@ A starter kit using Ionic 2/3 for web applications and Angular 4 with angularFir
 
 
 ## Set up the framework
-Make sure you have angular cli installed.
+Make sure you have Node.js v6 or greater installed, if not follow te below instructions:
+```bash
+# Run one of the following
+# for Node.js v6
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+# OR for Node.js v7
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+```
+Then run:
+```bash
+sudo apt-get install -y nodejs
+```
+If you have an older version you can update with:
+```bash
+sudo apt-get purge nodejs npm
+```
+Ionic Installation
 ```bash
 $ npm install -g ionic cordova
 ```
