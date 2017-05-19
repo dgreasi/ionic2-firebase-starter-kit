@@ -8,7 +8,7 @@ Make sure you have Node.js v6 or greater installed, if not follow te below instr
 #### First way (recommended)
 ```bash
 # Run one of the following
-# for Node.js v6
+# for Node.js v6 (recommended version)
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 # OR for Node.js v7
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
@@ -26,7 +26,16 @@ Download node.js [here](https://nodejs.org/en/) and install it on your system.
 
 ### Step 2
 Ionic Installation (may need sudo)
+#### Important
+The "ionic serve" currenlty crashes on ionic cli v3.2.1.
+For the time being, i suggest you to install a previous cli version of ionic:
 ```bash
+$ npm install -g ionic@2.1.18
+```
+until a patch come out and fix this problem on the "ionic serve".
+#### Latest ionic cli "Not recommened"
+```bash
+# Latest version of ionic cli, currently crashes on ionic serve
 $ npm install -g ionic cordova
 ```
 
