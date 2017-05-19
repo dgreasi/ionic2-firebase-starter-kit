@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
-import { NpmService } from 'get-package-downloads';
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -11,29 +9,14 @@ import { NpmService } from 'get-package-downloads';
 export class HomePage {
 	users: FirebaseListObservable<any[]>;
 
-
-  	constructor(public navCtrl: NavController, public npmService: NpmService, public alertCtrl: AlertController, db: AngularFireDatabase, public actionSheetCtrl: ActionSheetController) {
+  	constructor(public navCtrl: NavController, public alertCtrl: AlertController, db: AngularFireDatabase, public actionSheetCtrl: ActionSheetController) {
 		this.users = db.list('/users');
-
-		let repo = new Object({
-			name: "localForage",
-			html_url: "https://github.com/localForage/localForage",
-		    downloads: null
-	    });
-
-		this.npmService.getDowloadsPackage('localforage').subscribe(res => {
-			console.log("Res: " + res.downloads);
-		});
-
-		// console.log("Repo: "  + this.npmService.getDownloadsRepo(repo).downloads);
-		// this.npmService.getDownloadsRepo(repo).subscribe(res => {
-		// 	console.log("Repo: " +res.downloads);
-		// });
-
-		this.npmService.getPackageInfo('localforage').subscribe(res=>{
-			console.log(res);
-		});
   	}
+
+
+  	goToNpm() {
+	  this.navCtrl.push('NpmPage');
+	}
 
 
   	addUser() {

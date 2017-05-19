@@ -34,17 +34,17 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     HttpModule,
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    IonicModule.forRoot(MyApp),
     // DownloadsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    HomePage
   ],
   providers: [
     StatusBar,
