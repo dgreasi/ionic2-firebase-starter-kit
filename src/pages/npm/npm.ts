@@ -22,10 +22,13 @@ export class NpmPage {
 			console.log("Res: " + res.downloads);
 		});
 
-		console.log(this.npmService.getDownloadsRepo(repo).downloads);
-		// this.npmService.getDownloadsRepo(repo).subscribe(res => {
-		// 	console.log("Repo: " +res.downloads);
-		// });
+		this.npmService.getDownloadsRepo(repo).subscribe(res => {
+			console.log("Result of repo observable: " + res);
+		});
+
+		this.npmService.getDownloadsRepoPromise(repo).then(res => {
+			console.log("Result of repo promise: " + res);
+		});
 
 		this.npmService.getPackageInfo('localforage').subscribe(res=>{
 			console.log("Package Info: " + res);
