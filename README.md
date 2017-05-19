@@ -33,6 +33,7 @@ For the time being, i suggest you to install a previous cli version of ionic:
 $ npm install -g ionic@2.1.18
 ```
 until a patch come out and fix this problem on the "ionic serve".
+
 #### Latest ionic cli "Not recommened"
 ```bash
 # Latest version of ionic cli, currently crashes on ionic serve
