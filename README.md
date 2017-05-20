@@ -30,7 +30,7 @@ Ionic Installation (may need sudo)
 The "ionic serve" currenlty crashes on ionic cli v3.2.1.
 For the time being, i suggest you to install a previous cli version of ionic:
 ```bash
-$ npm install -g ionic@2.1.18
+$ npm install -g ionic@2.2.3
 ```
 until a patch come out and fix this problem on the "ionic serve".
 
