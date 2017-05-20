@@ -34,6 +34,14 @@ $ npm install -g ionic@2.2.3
 ```
 until a patch come out and fix this problem on the "ionic serve".
 
+#### Optional
+Also, if you want to export this tutorial as an ios/android application you will need to install cordova by running:
+```bash
+# It is not required for this web app tutorial
+# May need sudo
+$ npm install -g cordova
+```
+
 #### Latest ionic cli "Not recommened"
 ```bash
 # Latest version of ionic cli, currently crashes on ionic serve
