@@ -18,6 +18,24 @@ export class HomePage {
 	  this.navCtrl.push('NpmPage');
 	}
 
+	presentAlert() {
+	  let alert = this.alertCtrl.create({
+	    title: 'Info',
+	    subTitle: 'Created by Dimitrios Greasidis',
+	    buttons: [{
+	    		text: 'GitHub repo',
+	    		handler: () => {
+	    			window.open("https://github.com/Temeteron/ionic2-firebase-starter-kit", "_blank");
+	    		}
+	    	},
+	    	{
+	    		text: 'Dismiss'
+	    	}
+	    ]
+	  });
+	  alert.present();
+	}
+
 
   	addUser() {
 	  let prompt = this.alertCtrl.create({

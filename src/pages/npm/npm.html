@@ -1,9 +1,14 @@
 <ion-header>
   <ion-navbar color="dark">
-    <ion-title text-center>Ionic and Firebase</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="presentAlert()">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Ionic 3</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="addUser()">
-        <ion-icon name="add"></ion-icon>
+      <button ion-button icon-only (click)="goHome()">
+        <ion-icon name="home"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -12,27 +17,84 @@
 <ion-content padding class="background-template">
 <div class="template-center">
   <h2 class="center">NpmJs Library "get-package-downloads" demo</h2>
-  <h4 class="center">Get downloads of package, by string</h4>
-  <ion-item>
+  <p class="center">Get the number of downloads, of NpmJs packages or repositories which are published at NpmJs.</p>
+  <hr>
+  <h4 class="center">Get downloads of package by string</h4>
+  <p class="center"><b>function: </b>this.npmService.getDowloadsPackage('localforage')
+  </p>
+
+  <div class="center">
+    <ion-chip class="bold font-medium" color="primary">
+      <ion-label>Result</ion-label>
+    </ion-chip>
+
+    <ion-chip class="font-medium" color="secondary">
+      <ion-label >{{ downloadsPackage }}</ion-label>
+    </ion-chip>
+  </div>
+  
+  <!-- <ion-item>
     <ion-label color="primary" floating clearInput>Name of package</ion-label>
     <ion-input></ion-input>
   </ion-item>
-
-  <h4 class="center">Get package info, by string</h4>
-  <ion-item>
-    <ion-label color="primary" floating clearInput>Name of package</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-
+ -->
+  <hr>
   <h4 class="center">Get downloads of package by repo</h4>
-  <ion-item>
+  <!-- <hr> -->
+  <p class="center bold">Object repo arg:</p>
+  <p class="center"><b>name:</b> {{ repo.name }}</p>
+  <p class="center"><b>html_url:</b> {{ repo.html_url }}</p>
+  <p class="center"><b>downloads:</b> 0 -> {{ repo.downloads }}</p>
+  <hr>
+  <p class="center"><b>function: </b>this.npmService.getDownloadsRepo(repo)</p>
+  <div class="center">
+    <ion-chip class="bold font-medium" color="primary">
+      <ion-label>Result</ion-label>
+    </ion-chip>
+
+    <ion-chip class="font-medium" color="secondary">
+      <ion-label >{{ downloadsRepo }}</ion-label>
+    </ion-chip>
+  </div>
+
+  
+  <p class="center"><b>function: </b>this.npmService.getDownloadsRepoPromise(repo)</p>
+  <div class="center">
+    <ion-chip class="bold font-medium" color="primary">
+      <ion-label>Result</ion-label>
+    </ion-chip>
+
+    <ion-chip class="font-medium" color="secondary">
+      <ion-label >{{ downloadsRepoPromise }}</ion-label>
+    </ion-chip>
+  </div>
+  <hr>
+<!--   <ion-item>
     <ion-label color="primary" floating clearInput>Name of repo</ion-label>
     <ion-input></ion-input>
   </ion-item>
+ -->
+  
+  <h4 class="center">Get package info by string</h4>
+  <p class="center"><b>function: </b>this.npmService.getPackageInfo('localforage')</p>
+  <div class="center">
+    <ion-chip class="bold font-medium" color="primary">
+      <ion-label>Homepage</ion-label>
+    </ion-chip>
 
-  <br>
+    <ion-chip class="font-medium" color="secondary">
+      <ion-label >{{ packageInfo?.homepage }}</ion-label>
+    </ion-chip>
+  </div>
+<!--   <ion-item>
+    <ion-label color="primary" floating clearInput>Name of package</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+ -->
+
+  <hr>
   <div text-center>
-    <a ion-button round href="https://www.npmjs.com/package/get-package-downloads" target="_blank">NpmJs Page</a>
+    <a ion-button round href="https://www.npmjs.com/package/get-package-downloads" target="_blank">Go to NpmJs Page</a>
   </div>
 
 </div>
