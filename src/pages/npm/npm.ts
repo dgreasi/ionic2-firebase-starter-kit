@@ -11,10 +11,13 @@ import { HomePage } from '../home/home';
   templateUrl: 'npm.html',
 })
 export class NpmPage {
-	downloadsPackage: number;
+	downloadsPackage: any;
 	packageInfo: any;
-	downloadsRepo: number;
-	downloadsRepoPromise: number;
+	downloadsRepo: any;
+	downloadsRepoPromise: any;
+	
+	package: string;
+
 	repo = new Object({
 		name: "localForage",
 		html_url: "https://github.com/localForage/localForage",
@@ -22,35 +25,39 @@ export class NpmPage {
     });
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public npmService: NpmService, public navParams: NavParams) {
-  	// 	let repo = new Object({
-			// name: "localForage",
-			// html_url: "https://github.com/localForage/localForage",
-		 //    downloads: 0
-	  //   });
-
-		this.npmService.getDowloadsPackage('localforage').subscribe(res => {
-			this.downloadsPackage = res.downloads;
-			// console.log("Res: " + res.downloads);
-		});
 
 		this.npmService.getDownloadsRepo(this.repo).subscribe(res => {
 			this.downloadsRepo = res;
 			// console.log("Result of repo observable: " + res);
+		}, err => {
+			this.downloadsRepo = 'No package';
 		});
 
 		this.npmService.getDownloadsRepoPromise(this.repo).then(res => {
 			this.downloadsRepoPromise = res;
 			// console.log("Result of repo promise: " + res);
-		});
-
-		this.npmService.getPackageInfo('localforage').subscribe(res => {
-			this.packageInfo = res;
-			// console.log("Package Info: " + res);
+		}, err => {
+			this.downloadsRepoPromise = 'No package';
 		});
   }
 
   goHome() {
 		this.navCtrl.push(HomePage);
+  }
+
+  searchPackage() {
+  	this.npmService.getDowloadsPackage(this.package).subscribe(res => {
+		this.downloadsPackage = res.downloads;
+	}, err => {
+		this.downloadsPackage = 'No package';
+	});
+
+
+	this.npmService.getPackageInfo(this.package).subscribe(res => {
+		this.packageInfo = res;
+	}, err => {
+		this.packageInfo = null;
+	});
   }
 
   presentAlert() {
