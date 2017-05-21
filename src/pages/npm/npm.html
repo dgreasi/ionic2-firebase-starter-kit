@@ -17,10 +17,18 @@
 <ion-content padding class="background-template">
 <div class="template-center">
   <h2 class="center">NpmJs Library "get-package-downloads" demo</h2>
-  <p class="center">Get the number of downloads, of NpmJs packages or repositories which are published at NpmJs.</p>
+  <p class="center">Get the monthly downloads of NpmJs packages or repositories which are published on NpmJs.</p>
+  <form (ngSubmit)="searchPackage()">
+    <ion-item>
+      <ion-input placeholder="Name of package" [(ngModel)]="package" name="Package" clearInput></ion-input>
+    </ion-item>
+    <div class="center">
+      <button ion-button type="submit" color="secondary" round>Search package</button>
+    </div>
+  </form>
   <hr>
   <h4 class="center">Get downloads of package by string</h4>
-  <p class="center"><b>function: </b>this.npmService.getDowloadsPackage('localforage')
+  <p class="center"><b>function: </b>this.npmService.getDowloadsPackage('{{ package }}')
   </p>
 
   <div class="center">
@@ -33,11 +41,24 @@
     </ion-chip>
   </div>
   
-  <!-- <ion-item>
-    <ion-label color="primary" floating clearInput>Name of package</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
- -->
+  <hr>
+  <h4 class="center">Get package info by string</h4>
+  <p class="center"><b>function: </b>this.npmService.getPackageInfo('{{ package }}')</p>
+  <div class="center">
+    <ion-chip class="bold font-medium" color="primary">
+      <ion-label>Homepage</ion-label>
+    </ion-chip>
+
+    <ion-chip class="font-medium" color="secondary">
+      <ion-label >{{ packageInfo?.homepage }}</ion-label>
+    </ion-chip>
+    
+    <div *ngIf="packageInfo">
+      <a ion-button round href="{{ packageInfo?.homepage }}" target="_blank">Go to GitHub homepage</a>
+    </div>
+  </div>
+  
+
   <hr>
   <h4 class="center">Get downloads of package by repo</h4>
   <!-- <hr> -->
@@ -75,24 +96,13 @@
   </ion-item>
  -->
   
-  <h4 class="center">Get package info by string</h4>
-  <p class="center"><b>function: </b>this.npmService.getPackageInfo('localforage')</p>
-  <div class="center">
-    <ion-chip class="bold font-medium" color="primary">
-      <ion-label>Homepage</ion-label>
-    </ion-chip>
-
-    <ion-chip class="font-medium" color="secondary">
-      <ion-label >{{ packageInfo?.homepage }}</ion-label>
-    </ion-chip>
-  </div>
+  
 <!--   <ion-item>
     <ion-label color="primary" floating clearInput>Name of package</ion-label>
     <ion-input></ion-input>
   </ion-item>
  -->
 
-  <hr>
   <div text-center>
     <a ion-button round href="https://www.npmjs.com/package/get-package-downloads" target="_blank">Go to NpmJs Page</a>
   </div>
