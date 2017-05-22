@@ -63,7 +63,7 @@ export class NpmPage {
   presentAlert() {
 	  let alert = this.alertCtrl.create({
 	    title: 'Info',
-	    subTitle: 'Created by Dimitrios Greasidis',
+	    subTitle: 'Created by <a href="https://www.linkedin.com/in/dimitrios-greasidis-9a035a118" target="_blank">Dimitrios Greasidis</a>',
 	    buttons: [{
 	    		text: 'GitHub repo',
 	    		handler: () => {

@@ -18,6 +18,10 @@
 <div class="template-center">
   <h2 class="center">NpmJs Library "get-package-downloads" demo</h2>
   <p class="center">Get the monthly downloads of NpmJs packages or repositories which are published on NpmJs.</p>
+  <p class="center">
+    <ion-icon name="alert"></ion-icon>
+    The search of NpmJs is case sensitive! We will transform your query to lower case, because all packages in NpmJs are published with lower case names.
+  </p>
   <form (ngSubmit)="searchPackage()">
     <ion-item>
       <ion-input placeholder="Name of package" [(ngModel)]="package" name="Package" clearInput></ion-input>
