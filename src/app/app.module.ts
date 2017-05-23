@@ -17,12 +17,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 // AF2 Settings
 // Go to Firebase console and add your own config settings
 export const firebaseConfig = {
-  apiKey: "AIzaSyA9Y_Mgc5w7SGjZXl9n49iAofgQ0B6WQEg",
-  authDomain: "ionic2-test-7b01e.firebaseapp.com",
-  databaseURL: "https://ionic2-test-7b01e.firebaseio.com",
-  projectId: "ionic2-test-7b01e",
-  storageBucket: "ionic2-test-7b01e.appspot.com",
-  messagingSenderId: "160667880805"
+  apiKey: "AIzaSyCaO9No5iaIid_3zOIX7p-zZp8hGUI165s",
+  authDomain: "ionic2-firebase-5b304.firebaseapp.com",
+  databaseURL: "https://ionic2-firebase-5b304.firebaseio.com",
+  projectId: "ionic2-firebase",
+  storageBucket: "ionic2-firebase.appspot.com",
+  messagingSenderId: "328168137001"
 };
 
 @NgModule({
