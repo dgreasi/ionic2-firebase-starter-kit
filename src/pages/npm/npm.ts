@@ -60,7 +60,7 @@ export class NpmPage {
 	});
   }
 
-  presentAlert() {
+	presentAlert() {
 	  let alert = this.alertCtrl.create({
 	    title: 'Info',
 	    subTitle: 'Created by <a href="https://www.linkedin.com/in/dimitrios-greasidis-9a035a118" target="_blank">Dimitrios Greasidis</a>',
@@ -76,6 +76,11 @@ export class NpmPage {
 	    ]
 	  });
 	  alert.present();
+	}
+
+
+	getGithubRepo(name: string) {
+
 	}
 
 }
