@@ -60,7 +60,6 @@ then you should run the following command to run this project in development mod
 npm run ionic:serve
 ```
 This is happening due to a bug on ionic. It should be fixed in the next version. 
-
 Nevertheless, if it still crashes, you can follow the "alternative" Step 2, which is described at the end of this doc.
 
 
