@@ -1,6 +1,6 @@
 # ionic2-firebase-starter-kit
-A starter kit using Ionic 2/3 for web applications and Angular 4 with angularFire2(firebase)
-
+A starter kit using Ionic 2/3 for web applications and Angular 4 with angularFire2(firebase). 
+This web application demonstrates the use of firebase with ionic 2/3. Live changes. The data will be saved on cloud and can be easily accessed even from developer mode.
 
 ## Set up the framework
 Make sure you have Node.js v6 or greater installed, if not follow te below instructions:
@@ -26,23 +26,8 @@ Download node.js [here](https://nodejs.org/en/) and install it on your system.
 
 ### Step 2
 Ionic Installation (may need sudo)
-#### Important
-The "ionic serve" currenlty crashes on ionic cli v3.2.1.
-For the time being, i suggest you to install a previous cli version of ionic:
-```bash
-$ npm install -g ionic@2.2.3
-```
-until a patch come out and fix this problem on the "ionic serve".
 
-#### Optional
-Also, if you want to export this tutorial as an ios/android application you will need to install cordova by running:
-```bash
-# It is not required for this web app tutorial
-# May need sudo
-$ npm install -g cordova
-```
-
-#### Latest ionic cli "Not recommened"
+#### Latest ionic cli
 ```bash
 # Latest version of ionic cli, currently crashes on ionic serve
 $ npm install -g ionic cordova
@@ -64,8 +49,17 @@ Run the app
 ```bash
 $ ionic serve
 ```
-
-This web application demonstrates the use of firebase with ionic 2/3. Live changes. The data will be saved on cloud and can be easily accessed even from developer mode.
+#### Important
+If the below error occurs when you run "ionic serve" to run the project:
+```bash
+# ERROR
+[ERROR] app-scripts serve unexpectedly failed.settings: undefinedcontext: [object Object]
+```
+then you should run the following command to fix this:
+```bash
+npm run ionic:serve
+```
+Nevertheless, if it still crashes, you can follow the "alternative" Step 2, which is described at the end of this doc.
 
 
 ## Steps to create your web app with the power of firebase and ionic
@@ -85,3 +79,20 @@ This web application demonstrates the use of firebase with ionic 2/3. Live chang
 
 ## Demo Instructions for live changes
 You can check this starter kit at the given link on the description. If you want to test the live changes, enter to the website from your phone and your pc. Change/Add/Delete a user and you will see the change instantly on the other device.
+
+
+#### Step 2 - Alternative
+The "ionic serve" currenlty crashes on ionic cli v3.2.1.
+For the time being, i suggest you to install a previous cli version of ionic:
+```bash
+$ npm install -g ionic@2.2.3
+```
+until a patch come out and fix this problem on the "ionic serve".
+
+#### Optional
+Also, if you want to export this tutorial as an ios/android application you will need to install cordova by running:
+```bash
+# It is not required for this web app tutorial
+# May need sudo
+$ npm install -g cordova
+```
